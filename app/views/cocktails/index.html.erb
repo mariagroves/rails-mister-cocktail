@@ -1,7 +1,11 @@
-<h1>Cocktails</h1>
-<%= link_to "Add cocktail", new_cocktail_path, class: "btn btn-primary" %>
-<ul>
-<% @cocktails.each do |cocktail| %>
-<li> <%= link_to cocktail.name, cocktail_path(cocktail) %> </li>
-<% end %>
-</ul>
+<nav class='menu'>
+  <input checked='checked' class='menu-toggler' id='menu-toggler' type='checkbox'>
+  <label for='menu-toggler'></label>
+  <ul>
+    <% @cocktails.each do |cocktail| %>
+    <li class='menu-item'>
+      <%= link_to cocktail.name, cocktail_path(cocktail) %>
+    </li>
+    <% end %>
+  </ul>
+</nav>
