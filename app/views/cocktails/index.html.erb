@@ -1,5 +1,5 @@
 <nav class='menu'>
-  <input checked='checked' class='menu-toggler' id='menu-toggler' type='checkbox'>
+  <input class='menu-toggler' id='menu-toggler' type='checkbox'>
   <label for='menu-toggler'></label>
   <ul>
     <% @cocktails.each do |cocktail| %>
@@ -7,5 +7,6 @@
       <%= link_to cocktail.name, cocktail_path(cocktail) %>
     </li>
     <% end %>
+    <li class='menu-item'><%= link_to "Add cocktail", new_cocktail_path %></li>
   </ul>
 </nav>

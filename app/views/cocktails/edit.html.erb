@@ -1,2 +1,2 @@
-<h1>Edit <%= @cocktail.name %></h1>
+<h1 class="center-screen">Edit <%= link_to @cocktail.name, :anchor => 'form' %></h1>
 <%= render 'form', cocktail: @cocktail %>

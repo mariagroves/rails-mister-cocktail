@@ -1,1 +1,54 @@
-// Specific CSS for your home-page
+body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Space Mono', monospace;
+  background: radial-gradient(circle, #0a0a0a, #272332, #453a5b, #695185, #9368af, #9669b5, #996abc, #9c6bc2, #7657a5, #524388, #30306b, #0d1e4e);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: #dac0e5;
+  text-decoration: none;
+}
+
+h1 {
+  color: white;
+}
+
+p {
+  color: white;
+}
+
+label {
+  color: white !important;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.cocktail-info {
+  position: relative;
+}
+
+.cocktail-options {
+  position: absolute;
+  top: 40px;
+  left: 360px;
+}
+
+.description {
+  padding-left: 50px;
+  padding-right: 50px
+}

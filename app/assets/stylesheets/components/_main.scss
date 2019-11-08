@@ -24,10 +24,11 @@ $item-transition: .5s;
   margin: auto;
 }
 
+
 @mixin line {
   @include size($toggler-size, $toggler-size/8);
   display: block;
-  z-index: 1;
+  z-index: -1;
   border-radius: $toggler-size/16;
   background: rgba($toggler-color, 0.7);
   transition: $toggler-transition;
@@ -35,10 +36,7 @@ $item-transition: .5s;
 
 // styles
 
-body {
-  overflow: hidden;
-  background: linear-gradient(to right, #fc354c, #0abfbc);
-}
+
 
 .menu-toggler {
   @include absolute-center;
@@ -50,7 +48,8 @@ body {
   &:hover + label,
   &:hover + label:before,
   &:hover + label:after {
-    background: $toggler-color;
+  background: transparent;
+  color: #dac0e5;
   }
 }
 
@@ -59,20 +58,20 @@ body {
     background: transparent;
   }
 
-  & + label:before,
-  & + label:after {
-    top: 0;
-    width: $toggler-size;
-    transform-origin: 50% 50%;
-  }
+  // & + label:before,
+  // & + label:after {
+  //   top: 0;
+  //   width: $toggler-size;
+  //   transform-origin: 50% 50%;
+  // }
 
-  & + label:before {
-    transform: rotate(45deg);
-  }
+  // & + label:before {
+  //   transform: rotate(5deg);
+  //  }
 
-  & + label:after {
-    transform: rotate(-45deg);
-  }
+  //  & + label:after {
+  //   transform: rotate(-45deg);
+  //  }
 }
 
 .menu-toggler:checked ~ ul {
@@ -94,21 +93,15 @@ body {
 .menu-toggler + label {
   @include line;
   @include absolute-center;
-
-  &:before,
-  &:after {
-    @include line;
-    content: "";
-    position: absolute;
-    left: 0;
-  }
+  background-color: transparent;
+  color: white;
+  font-size: 20px;
 
   &:before {
-    top: $toggler-size/4;
-  }
-
-  &:after {
-    top: -$toggler-size/4;
+    content: "Cocktails";
+    position: absolute;
+    left: -23px !important;
+    top: -7px;
   }
 }
 

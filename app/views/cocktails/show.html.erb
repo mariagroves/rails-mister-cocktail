@@ -1,19 +1,27 @@
-<h1> <%=@cocktail.name %> </h1>
+<div class="center-screen">
+  <h1><%= link_to @cocktail.name, :anchor => 'cocktail'%> </h1>
+  <p class="description"><%= @cocktail.details %></p>
+</div>
 
-<%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail) %>
-<%= link_to "Back to main menu", cocktails_path %>
+<div class="cocktail-info">
+  <div class="center-screen" id="cocktail">
+    <ul>
+    <% @cocktail.doses.each do |dose| %>
+      <li>
+        <%= dose.description %>
+        <%= dose.ingredient.name %>
+        <%= link_to "Delete ingredient", dose_path(dose), method: :delete,
+          data: { confirm: "Are you sure?" }, class: "btn btn-primary btn-sm"  %>
+      </li>
+    <% end %>
+    </ul>
+  </div>
 
-<ul>
-<% @cocktail.doses.each do |dose| %>
-  <li>
-    <%= dose.description %>
-    <%= dose.ingredient.name %>
-    <%= link_to "Delete ingredient", dose_path(dose), method: :delete,
-      data: { confirm: "Are you sure?" } %>
-  </li>
-<% end %>
-</ul>
-
-<%= link_to "Delete cocktail", cocktail_path(@cocktail), method: :delete,
-    data: { confirm: "Are you sure?" } %>
-<%= link_to "Edit cocktail", edit_cocktail_path(@cocktail) %>
+  <div class="cocktail-options">
+    <%= link_to "Edit cocktail", edit_cocktail_path(@cocktail), class: "btn btn-primary"  %>
+    <%= link_to "Delete cocktail", cocktail_path(@cocktail), method: :delete,
+      data: { confirm: "Are you sure?" }, class: "btn btn-primary"  %></li>
+    <%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-primary"  %>
+    <%= link_to "Back to main menu", cocktails_path, class: "btn btn-primary"  %>
+  </div>
+</div>
